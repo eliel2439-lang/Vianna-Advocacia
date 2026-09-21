@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090a08" />
+  <meta name="description" content="Vianna Advocacia em Araraquara/SP. Uma experiência jurídica contemporânea, com leitura de contexto, clareza e direção." />
+  <meta property="og:title" content="Vianna Advocacia | Araraquara - SP" />
+  <meta property="og:description" content="Direito pensado além do óbvio. Contexto, clareza e direção jurídica." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Vianna Advocacia | Araraquara - SP</title>
+  <style>
+    :root{
+      --ink:#090a08;
+      --ink2:#10120f;
+      --paper:#f4f0e7;
+      --paper2:#e8e1d4;
+      --warm:#b98552;
+      --warm2:#e4b982;
+      --sage:#aeb9a7;
+      --muted:#7f827a;
+      --line:rgba(244,240,231,.14);
+      --line2:rgba(9,10,8,.14);
+      --shadow:0 35px 100px rgba(0,0,0,.28);
+      --max:1480px;
+      --radius:34px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--ink)}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    img,svg,canvas{display:block;max-width:100%}
+    ::selection{background:var(--warm);color:#111}
+
+    .grain{position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.045;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E")}
+    .progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:9999;background:transparent}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--warm),var(--warm2))}
+    .wrap{width:min(calc(100% - 54px),var(--max));margin:auto}
+    .serif{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.052em}
+    .eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;font-weight:800;color:var(--muted)}
+    .section{position:relative;padding:132px 0}
+
+    .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:10000;border-radius:50%;opacity:0;transition:opacity .2s}
+    .cursor-dot{width:6px;height:6px;background:var(--warm2);margin:-3px 0 0 -3px}
+    .cursor-ring{width:42px;height:42px;border:1px solid rgba(228,185,130,.65);margin:-21px 0 0 -21px;transition:width .2s,height .2s,margin .2s,opacity .2s,border-color .2s}
+    body.has-pointer .cursor-dot,body.has-pointer .cursor-ring{opacity:1}
+    body.cursor-active .cursor-ring{width:64px;height:64px;margin:-32px 0 0 -32px;border-color:rgba(228,185,130,.95)}
+
+    header{position:fixed;inset:0 0 auto 0;z-index:120;color:var(--paper);transition:.35s;background:linear-gradient(to bottom,rgba(9,10,8,.86),rgba(9,10,8,.2),transparent)}
+    header.scrolled{background:rgba(9,10,8,.83);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{height:88px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+    .brand{display:flex;align-items:center;gap:14px;min-width:0}
+    .brand-mark{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;font-family:Georgia,serif;font-size:25px;position:relative;overflow:hidden;background:rgba(255,255,255,.025)}
+    .brand-mark:before{content:"";position:absolute;width:36px;height:1px;background:var(--warm2);transform:rotate(-38deg)}
+    .brand-copy strong{display:block;font-size:13px;letter-spacing:.16em;text-transform:uppercase}.brand-copy span{display:block;margin-top:7px;font-size:9px;color:rgba(244,240,231,.56);letter-spacing:.23em;text-transform:uppercase}
+    .nav-links{display:flex;gap:30px;align-items:center;font-size:12px}.nav-links a{color:rgba(244,240,231,.65);transition:.2s}.nav-links a:hover{color:#fff}
+    .nav-cta{padding:13px 17px;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#fff!important;background:rgba(255,255,255,.03)}
+    .menu-btn{display:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.22);color:#fff;background:rgba(255,255,255,.03)}
+
+    .hero{min-height:100svh;background:var(--ink);color:var(--paper);position:relative;overflow:hidden;padding:138px 0 50px;display:flex;align-items:flex-end;isolation:isolate}
+    #field{position:absolute;inset:0;width:100%;height:100%;z-index:-3;opacity:.8}
+    .hero-vignette{position:absolute;inset:0;z-index:-2;background:radial-gradient(circle at 68% 42%,rgba(185,133,82,.18),transparent 30%),linear-gradient(180deg,rgba(9,10,8,.05),rgba(9,10,8,.82) 86%)}
+    .hero-grid{position:absolute;inset:-10%;z-index:-2;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:82px 82px;transform:perspective(900px) rotateX(68deg) translateY(38%);transform-origin:center center;mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 72%)}
+    .hero-layout{display:grid;grid-template-columns:1.18fr .82fr;gap:60px;align-items:end}
+    .hero-kicker{display:flex;align-items:center;gap:14px;margin-bottom:28px;color:rgba(244,240,231,.65);font-size:11px;letter-spacing:.24em;text-transform:uppercase}.hero-kicker i{width:48px;height:1px;background:var(--warm2)}
+    .hero h1{font-size:clamp(72px,10.6vw,168px);line-height:.82;margin:0;max-width:1030px}.hero h1 span{display:block}.hero h1 .line2{margin-left:10vw;font-style:italic;color:var(--warm2)}
+    .hero-copy{margin-top:40px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:end;border-top:1px solid var(--line);padding-top:24px}
+    .hero-copy p{margin:0;color:rgba(244,240,231,.64);font-size:17px;line-height:1.75;max-width:620px}.hero-copy b{color:#fff;font-weight:600}
+    .hero-actions{display:flex;gap:11px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:15px 21px;border-radius:999px;border:1px solid transparent;font-size:12px;font-weight:800;letter-spacing:.05em;transition:transform .2s,box-shadow .2s,border-color .2s,background .2s;will-change:transform}
+    .btn-primary{background:var(--paper);color:var(--ink)}.btn-primary:hover{box-shadow:0 16px 38px rgba(255,255,255,.12)}
+    .btn-ghost{border-color:rgba(255,255,255,.21);color:#fff;background:rgba(255,255,255,.025)}.btn-ghost:hover{border-color:rgba(255,255,255,.5)}
+
+    .hero-art{min-height:570px;position:relative;perspective:1100px;display:grid;place-items:center}
+    .orb{position:absolute;width:min(34vw,470px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 34% 30%,rgba(255,255,255,.18),rgba(185,133,82,.12) 18%,rgba(22,24,20,.15) 45%,rgba(0,0,0,.72) 72%);box-shadow:inset -40px -40px 90px rgba(0,0,0,.5),inset 20px 20px 60px rgba(255,255,255,.04),0 50px 130px rgba(0,0,0,.55);filter:saturate(.9);transform-style:preserve-3d;transition:transform .12s linear}
+    .orb:before,.orb:after{content:"";position:absolute;border-radius:50%;inset:-9%;border:1px solid rgba(244,240,231,.15);transform:rotateX(66deg) rotateZ(18deg)}
+    .orb:after{inset:-24%;border-color:rgba(185,133,82,.22);transform:rotateX(72deg) rotateZ(-25deg)}
+    .orb-line{position:absolute;inset:14%;border:1px solid rgba(244,240,231,.1);border-radius:50%;transform:rotateY(70deg)}
+    .v-sculpt{position:relative;z-index:2;font-family:Georgia,serif;font-size:clamp(190px,22vw,350px);line-height:.8;color:#f6efe1;letter-spacing:-.15em;text-shadow:1px 1px 0 #be8a54,2px 2px 0 #a87545,3px 3px 0 #8c5c31,4px 4px 0 #744821,5px 5px 15px rgba(0,0,0,.6);transform:rotateY(-14deg) rotateX(5deg);transition:transform .12s linear;filter:drop-shadow(0 40px 36px rgba(0,0,0,.38))}
+    .v-sculpt em{font-style:italic;color:var(--warm2)}
+    .art-label{position:absolute;right:6%;bottom:4%;color:rgba(244,240,231,.46);font-size:10px;letter-spacing:.22em;text-transform:uppercase;writing-mode:vertical-rl}
+    .art-badge{position:absolute;left:5%;top:8%;width:112px;height:112px;border-radius:50%;border:1px solid rgba(244,240,231,.16);display:grid;place-items:center;text-align:center;color:rgba(244,240,231,.58);font-size:9px;letter-spacing:.18em;text-transform:uppercase;animation:spin 18s linear infinite}.art-badge:after{content:"✦";position:absolute;color:var(--warm2);font-size:15px}@keyframes spin{to{transform:rotate(360deg)}}
+
+    .scroll-cue{position:absolute;left:28px;bottom:28px;display:flex;gap:10px;align-items:center;color:rgba(244,240,231,.45);font-size:9px;letter-spacing:.2em;text-transform:uppercase}.scroll-cue i{width:1px;height:44px;background:linear-gradient(to bottom,var(--warm2),transparent);animation:pulse 1.7s ease-in-out infinite}@keyframes pulse{50%{opacity:.35;transform:scaleY(.6)}}
+
+    .marquee{overflow:hidden;background:var(--warm);color:#111;border-top:1px solid rgba(0,0,0,.2);border-bottom:1px solid rgba(0,0,0,.2)}
+    .marquee-track{display:flex;width:max-content;animation:marquee 28s linear infinite;padding:17px 0}.marquee span{font-family:Georgia,serif;font-size:25px;white-space:nowrap;margin-right:35px;display:flex;align-items:center;gap:35px}.marquee span:after{content:"✦";font-size:13px}@keyframes marquee{to{transform:translateX(-50%)}}
+
+    .manifesto{background:var(--paper);overflow:hidden}
+    .manifesto-grid{display:grid;grid-template-columns:.32fr 1.2fr;gap:84px}
+    .sticky-note{position:sticky;top:120px;height:max-content}.sticky-note p{font-size:13px;line-height:1.8;color:var(--muted);max-width:240px;margin-top:18px}
+    .manifesto h2{font-size:clamp(54px,7.3vw,112px);line-height:.97;margin:0;max-width:1100px}.manifesto h2 .muted{color:#9a9b95}
+    .manifesto-statement{margin-top:76px;display:grid;grid-template-columns:1fr 1fr;gap:32px;border-top:1px solid var(--line2);padding-top:30px}.manifesto-statement p{margin:0;font-size:17px;line-height:1.8;color:#52564f}
+    .ghost-word{position:absolute;left:-4vw;bottom:-1vw;font-family:Georgia,serif;font-size:20vw;line-height:.7;color:rgba(9,10,8,.035);white-space:nowrap;pointer-events:none;transform:translateX(var(--ghost-x,0))}
+
+    .cinema{background:var(--ink);color:var(--paper);padding:0;overflow:hidden}
+    .cinema-frame{min-height:86vh;display:grid;grid-template-columns:.78fr 1.22fr;align-items:stretch;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .cinema-left{padding:90px 6vw;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--line);background:linear-gradient(160deg,#0d0f0c,#151811)}
+    .cinema-left h2{font-size:clamp(56px,7vw,110px);line-height:.92;margin:20px 0}.cinema-left p{color:rgba(244,240,231,.55);line-height:1.8;max-width:520px}
+    .cinema-right{position:relative;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at 65% 45%,rgba(185,133,82,.18),transparent 35%),#090a08}
+    .rings{position:absolute;width:min(62vw,820px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.12);transform:rotateX(72deg)}
+    .rings:before,.rings:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.09);inset:12%}.rings:after{inset:28%;border-color:rgba(185,133,82,.25)}
+    .law-word{font-family:Georgia,serif;font-size:clamp(96px,15vw,240px);letter-spacing:-.08em;line-height:.75;color:#f4f0e7;position:relative;z-index:2;transform:translateY(var(--law-y,0));text-shadow:0 25px 60px rgba(0,0,0,.42)}
+    .law-word em{display:block;color:var(--warm2);font-size:.45em;text-align:right;font-style:italic;letter-spacing:-.04em;margin-top:.12em}
+
+    .situations{background:#10120f;color:var(--paper)}
+    .section-head{display:grid;grid-template-columns:.42fr 1fr;gap:64px;align-items:end;margin-bottom:62px}.section-head h2{font-size:clamp(50px,6vw,92px);line-height:.96;margin:0}.section-head p{margin:0;color:rgba(244,240,231,.55);font-size:16px;line-height:1.8;max-width:620px}
+    .scene-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .scene-card{position:relative;min-height:420px;border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:34px;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.008));transform-style:preserve-3d;transition:transform .16s linear,border-color .25s,background .25s}
+    .scene-card:hover{border-color:rgba(228,185,130,.35);background:linear-gradient(145deg,rgba(185,133,82,.08),rgba(255,255,255,.01))}
+    .scene-card .num{font-family:Georgia,serif;color:var(--warm2);font-size:17px}.scene-card h3{font-family:Georgia,serif;font-weight:400;font-size:clamp(36px,4vw,62px);line-height:1;margin:110px 0 20px;max-width:650px}.scene-card p{color:rgba(244,240,231,.54);line-height:1.7;max-width:610px;margin:0}.scene-card:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-80px;top:-80px;border:1px solid rgba(228,185,130,.16);box-shadow:0 0 0 34px rgba(228,185,130,.025),0 0 0 68px rgba(228,185,130,.018);transform:translateZ(-40px)}
+
+    .method{background:var(--paper)}
+    .method-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:90px}.method-intro{position:sticky;top:130px;height:max-content}.method-intro h2{font-size:clamp(54px,6.4vw,95px);line-height:.95;margin:18px 0 28px}.method-intro p{font-size:17px;line-height:1.8;color:#555a51;max-width:480px}
+    .steps{border-top:1px solid var(--line2)}
+    .step{display:grid;grid-template-columns:92px 1fr auto;gap:26px;align-items:center;padding:33px 0;border-bottom:1px solid var(--line2);transition:padding .25s}.step:hover{padding-left:12px}.step .n{font-family:Georgia,serif;color:var(--warm);font-size:20px}.step h3{font-family:Georgia,serif;font-weight:400;font-size:31px;margin:0}.step p{margin:8px 0 0;color:#71746c;line-height:1.6;max-width:650px}.step .arr{font-size:24px;color:#a5a69f}
+
+    .signature{background:var(--paper2);overflow:hidden}
+    .signature-card{min-height:720px;border-radius:40px;border:1px solid rgba(9,10,8,.12);display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;box-shadow:var(--shadow);background:#ede7dc;transform-style:preserve-3d}
+    .signature-copy{padding:76px;display:flex;flex-direction:column;justify-content:space-between}.signature-copy h2{font-size:clamp(58px,6.4vw,98px);line-height:.94;margin:16px 0 0}.signature-copy p{font-size:18px;line-height:1.8;color:#555a51;max-width:580px}
+    .signature-art{background:var(--ink);position:relative;overflow:hidden;display:grid;place-items:center;perspective:1000px}
+    .prism{position:relative;width:300px;height:420px;transform-style:preserve-3d;transform:rotateX(9deg) rotateY(-20deg);transition:transform .15s linear}
+    .prism-face{position:absolute;inset:0;border:1px solid rgba(228,185,130,.24);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(185,133,82,.08));backdrop-filter:blur(6px);clip-path:polygon(15% 0,85% 0,60% 100%,40% 100%);box-shadow:inset 0 0 70px rgba(255,255,255,.025)}
+    .prism-face:nth-child(2){transform:translateZ(-34px);opacity:.35}.prism-face:nth-child(3){transform:translateZ(34px);opacity:.2}
+    .prism-v{position:absolute;inset:0;display:grid;place-items:center;font-family:Georgia,serif;font-size:280px;color:var(--paper);letter-spacing:-.18em;filter:drop-shadow(0 30px 35px rgba(0,0,0,.4));transform:translateZ(62px)}
+    .signature-art:before{content:"";position:absolute;inset:-20%;background:repeating-radial-gradient(circle at 52% 48%,transparent 0 34px,rgba(255,255,255,.05) 35px 36px);transform:rotate(8deg)}
+    .sig-caption{position:absolute;bottom:32px;left:34px;color:rgba(244,240,231,.5);font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+
+    .office{background:var(--paper)}
+    .office-grid{display:grid;grid-template-columns:1fr 1fr;gap:78px;align-items:center}.office h2{font-size:clamp(54px,6.2vw,94px);line-height:.95;margin:15px 0 28px}.office-copy>p{font-size:18px;line-height:1.8;color:#555a51;max-width:620px}.info-stack{margin-top:42px;border-top:1px solid var(--line2)}.info-row{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line2);font-size:14px}.info-row span{color:var(--muted)}.info-row strong{font-weight:650;line-height:1.6}
+    .map-art{min-height:610px;border-radius:34px;background:#0d0f0c;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+    .map-grid{position:absolute;inset:-18%;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:58px 58px;transform:rotate(-9deg) scale(1.22)}
+    .map-road{position:absolute;width:150%;height:170px;left:-30%;top:45%;border:1px solid rgba(228,185,130,.55);border-radius:50%;transform:rotate(-22deg)}
+    .map-pin{position:absolute;left:55%;top:45%;width:25px;height:25px;border:4px solid var(--warm2);border-radius:50%;box-shadow:0 0 0 15px rgba(228,185,130,.12),0 0 45px rgba(228,185,130,.26)}
+    .map-label{position:absolute;left:38px;bottom:38px;color:var(--paper)}.map-label b{display:block;font-family:Georgia,serif;font-size:36px;font-weight:400}.map-label span{display:block;margin-top:8px;color:rgba(244,240,231,.55);font-size:13px;line-height:1.55}
+    .map-link{position:absolute;right:24px;top:24px;padding:12px 15px;border:1px solid rgba(255,255,255,.2);border-radius:999px;color:#fff;font-size:11px;background:rgba(9,10,8,.45);backdrop-filter:blur(12px)}
+
+    .notes{background:#dfe5d9}
+    .notes .section-head p{color:#596154}.notes-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:18px}.note{background:var(--paper);border:1px solid rgba(9,10,8,.08);border-radius:28px;min-height:350px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s,box-shadow .25s}.note:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(40,45,37,.14)}.note.big{min-height:520px}.note-tag{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--muted)}.note h3{font-family:Georgia,serif;font-weight:400;font-size:32px;line-height:1.14;margin:0}.note.big h3{font-size:52px;max-width:640px}.note p{color:#686d63;line-height:1.65}.note .arrow{font-size:24px;color:var(--warm)}
+
+    .contact{background:var(--ink);color:var(--paper);padding:136px 0 48px;position:relative;overflow:hidden}.contact:before{content:"V";position:absolute;right:-2vw;bottom:-9vw;font-family:Georgia,serif;font-size:40vw;line-height:.7;color:rgba(255,255,255,.018);pointer-events:none}.contact-top{display:grid;grid-template-columns:1.2fr .8fr;gap:70px;align-items:end;position:relative;z-index:2}.contact h2{font-size:clamp(66px,9.5vw,148px);line-height:.85;margin:0;max-width:980px}.contact h2 em{color:var(--warm2);font-style:italic}.contact-panel{padding:35px;border:1px solid var(--line);border-radius:30px;background:rgba(255,255,255,.025);backdrop-filter:blur(8px)}.contact-panel p{color:rgba(244,240,231,.58);line-height:1.75;margin:0 0 22px}.contact-actions{display:flex;gap:10px;flex-wrap:wrap}.contact-data{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:90px;padding-top:28px;border-top:1px solid var(--line);position:relative;z-index:2}.contact-data div{font-size:13px;line-height:1.7;color:rgba(244,240,231,.52)}.contact-data b{display:block;color:#fff;margin-bottom:8px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+    footer{margin-top:78px;padding-top:27px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:30px;font-size:11px;color:rgba(244,240,231,.4);line-height:1.6;position:relative;z-index:2}
+
+    .float-wa{position:fixed;right:20px;bottom:20px;z-index:100;width:60px;height:60px;border-radius:50%;background:var(--warm2);color:#111;display:grid;place-items:center;font-weight:900;box-shadow:0 16px 40px rgba(0,0,0,.32);transition:transform .25s}.float-wa:hover{transform:translateY(-5px) rotate(-4deg)}
+    .cookie{position:fixed;left:20px;bottom:20px;z-index:150;max-width:440px;background:#fff;color:#111;border:1px solid rgba(0,0,0,.12);box-shadow:0 25px 70px rgba(0,0,0,.2);border-radius:20px;padding:18px;display:none}.cookie.show{display:block}.cookie p{font-size:13px;line-height:1.6;margin:0 0 12px;color:#555}.cookie-actions{display:flex;gap:8px}.cookie button{border:0;border-radius:999px;padding:10px 14px;font-size:12px;font-weight:800}.cookie .accept{background:#111;color:#fff}.cookie .close{background:#eee9df;color:#111}
+
+    .mobile-menu{position:fixed;inset:0;background:#090a08;color:var(--paper);z-index:130;display:none;padding:120px 26px 34px}.mobile-menu.open{display:block}.mobile-menu a{display:block;font-family:Georgia,serif;font-size:44px;padding:13px 0;border-bottom:1px solid var(--line)}.mobile-menu small{display:block;margin-top:38px;color:rgba(244,240,231,.45);line-height:1.8}
+
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}.reveal.on{opacity:1;transform:none}
+    .clip-reveal{overflow:hidden}.clip-reveal>*{transform:translateY(115%);transition:transform 1s cubic-bezier(.16,1,.3,1)}.clip-reveal.on>*{transform:none}
+
+    @media(max-width:1100px){
+      .nav-links{display:none}.menu-btn{display:grid;place-items:center}.hero-layout{grid-template-columns:1fr}.hero-art{min-height:400px;margin-top:-30px}.hero-copy{grid-template-columns:1fr}.hero-actions{justify-content:flex-start}.orb{width:390px}.manifesto-grid,.method-layout,.office-grid,.contact-top{grid-template-columns:1fr}.sticky-note,.method-intro{position:relative;top:auto}.cinema-frame{grid-template-columns:1fr}.cinema-left{min-height:500px}.cinema-right{min-height:560px}.signature-card{grid-template-columns:1fr}.signature-art{min-height:520px}.notes-grid{grid-template-columns:1fr 1fr}.note.big{grid-column:1/-1}.contact-data{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:720px){
+      .cursor-dot,.cursor-ring{display:none}.wrap{width:min(calc(100% - 28px),var(--max))}.section{padding:88px 0}.nav{height:74px}.brand-copy strong{font-size:11px}.brand-copy span{font-size:8px}.hero{padding:118px 0 34px;min-height:100svh}.hero h1{font-size:clamp(64px,20vw,94px)}.hero h1 .line2{margin-left:0}.hero-copy{margin-top:30px}.hero-copy p{font-size:15px}.hero-art{min-height:350px;margin-top:0}.orb{width:300px}.v-sculpt{font-size:220px}.art-badge{width:86px;height:86px}.scroll-cue{display:none}.marquee span{font-size:20px}.manifesto-grid,.section-head{grid-template-columns:1fr;gap:30px}.manifesto h2,.section-head h2{font-size:clamp(48px,14vw,72px)}.manifesto-statement{grid-template-columns:1fr}.cinema-left{padding:72px 28px;min-height:520px}.cinema-right{min-height:450px}.law-word{font-size:28vw}.scene-grid{grid-template-columns:1fr}.scene-card{min-height:330px;padding:28px}.scene-card h3{margin-top:70px}.method-layout{gap:44px}.step{grid-template-columns:56px 1fr;align-items:start}.step .arr{display:none}.signature-card{border-radius:26px}.signature-copy{padding:38px}.signature-art{min-height:430px}.prism{width:230px;height:330px}.prism-v{font-size:220px}.office-grid{gap:44px}.map-art{min-height:440px}.info-row{grid-template-columns:1fr;gap:4px}.notes-grid{grid-template-columns:1fr}.note.big{min-height:390px}.note.big h3{font-size:39px}.contact{padding-top:96px}.contact h2{font-size:clamp(62px,20vw,98px)}.contact-panel{padding:24px}.contact-data{grid-template-columns:1fr}footer{flex-direction:column}.mobile-menu a{font-size:38px}.cookie{left:14px;right:14px;bottom:14px}.float-wa{width:55px;height:55px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee-track,.art-badge,.scroll-cue i{animation:none!important}.reveal,.clip-reveal>*{transition:none!important;transform:none!important;opacity:1!important}}
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="progress"><span id="progressBar"></span></div>
+  <div class="cursor-dot" id="cursorDot"></div><div class="cursor-ring" id="cursorRing"></div>
+
+  <header id="header">
+    <div class="wrap nav">
+      <a href="#inicio" class="brand magnetic" aria-label="Vianna Advocacia - início">
+        <span class="brand-mark">V</span>
+        <span class="brand-copy"><strong>Vianna Advocacia</strong><span>Araraquara · São Paulo</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#visao">Visão</a><a href="#experiencia">Experiência</a><a href="#metodo">Método</a><a href="#escritorio">Escritório</a><a href="#contato" class="nav-cta magnetic">Contato</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#visao">Visão</a><a href="#experiencia">Experiência</a><a href="#metodo">Método</a><a href="#escritorio">Escritório</a><a href="#contato">Contato</a>
+    <small>Vianna Advocacia<br>Av. Dr. Giuseppe Aufiero, 192 — Jardim Adalgisa<br>Araraquara/SP · +55 16 98872-5369</small>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <canvas id="field" aria-hidden="true"></canvas><div class="hero-vignette"></div><div class="hero-grid"></div>
+      <div class="wrap hero-layout">
+        <div>
+          <div class="hero-kicker reveal"><i></i><span>Vianna Advocacia · Araraquara/SP</span></div>
+          <div class="clip-reveal"><h1 class="serif"><span>DIREITO.</span><span class="line2">ALÉM</span><span>DO ÓBVIO.</span></h1></div>
+          <div class="hero-copy reveal"><p><b>Uma experiência jurídica construída a partir de contexto, clareza e direção.</b> Sem fórmulas visuais prontas — e sem respostas jurídicas automáticas.</p><div class="hero-actions"><a class="btn btn-primary magnetic" href="https://wa.me/5516988725369" target="_blank" rel="noopener">Conversar no WhatsApp ↗</a><a class="btn btn-ghost magnetic" href="#visao">Explorar a Vianna</a></div></div>
+        </div>
+        <div class="hero-art" id="heroArt" aria-hidden="true">
+          <div class="art-badge">Vianna · Direito · Araraquara</div>
+          <div class="orb" id="orb"><div class="orb-line"></div></div>
+          <div class="v-sculpt" id="vSculpt">V<em>.</em></div>
+          <div class="art-label">direção / presença / contexto</div>
+        </div>
+      </div>
+      <div class="scroll-cue"><i></i><span>Role para explorar</span></div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track">
+      <span>Contexto antes de resposta</span><span>Clareza antes de ruído</span><span>Estratégia antes de movimento</span><span>Presença em cada etapa</span>
+      <span>Contexto antes de resposta</span><span>Clareza antes de ruído</span><span>Estratégia antes de movimento</span><span>Presença em cada etapa</span>
+    </div></div>
+
+    <section class="section manifesto" id="visao">
+      <div class="ghost-word" id="ghostWord">VIANNA</div>
+      <div class="wrap manifesto-grid">
+        <aside class="sticky-note reveal"><div class="eyebrow">01 · Visão</div><p>O escritório não parte de respostas prontas. Parte da leitura correta do cenário, das pessoas envolvidas e do que realmente está em jogo.</p></aside>
+        <div>
+          <h2 class="serif reveal">A questão jurídica pode ser complexa. <span class="muted">A experiência de compreendê-la não precisa ser.</span></h2>
+          <div class="manifesto-statement reveal"><p>A Vianna Advocacia propõe uma relação jurídica mais clara, organizada e contemporânea — com informação compreensível desde o primeiro contato.</p><p>Antes de qualquer movimento, existe contexto. Antes de qualquer direção, existe leitura. Essa é a lógica que orienta a forma de conduzir cada demanda.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cinema" id="experiencia">
+      <div class="cinema-frame">
+        <div class="cinema-left reveal"><div><div class="eyebrow" style="color:#a9ada4">02 · Experiência</div><h2 class="serif">Não parecer jurídico.<br>Ser juridicamente preciso.</h2></div><p>Uma apresentação sofisticada não precisa depender de símbolos jurídicos previsíveis. A autoridade pode estar na clareza, no espaço, no ritmo e na forma como a informação é organizada.</p></div>
+        <div class="cinema-right"><div class="rings"></div><div class="law-word" id="lawWord">V<em>presença jurídica</em></div></div>
+      </div>
+    </section>
+
+    <section class="section situations">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="eyebrow" style="color:#aeb2aa">03 · O ponto de partida</div><h2 class="serif">Nem toda questão começa com o nome de uma área.</h2></div><p>Muitas vezes, o que existe primeiro é uma decisão, um risco, uma relação que precisa de estrutura ou um conflito que precisa de direção.</p></div>
+        <div class="scene-grid">
+          <article class="scene-card tilt reveal"><div class="num">01</div><h3>Uma decisão precisa ser tomada.</h3><p>O primeiro passo é organizar fatos, documentos e implicações para compreender o cenário com mais precisão.</p></article>
+          <article class="scene-card tilt reveal"><div class="num">02</div><h3>Um risco precisa ser lido.</h3><p>Antes de agir, é importante distinguir urgência, impacto, limites e caminhos possíveis.</p></article>
+          <article class="scene-card tilt reveal"><div class="num">03</div><h3>Uma relação precisa de estrutura.</h3><p>Obrigações, responsabilidades e documentos ganham mais sentido quando são apresentados de forma objetiva.</p></article>
+          <article class="scene-card tilt reveal"><div class="num">04</div><h3>Um conflito precisa de direção.</h3><p>Quando existe tensão, leitura cuidadosa e comunicação clara ajudam a construir uma condução mais consciente.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method" id="metodo">
+      <div class="wrap method-layout">
+        <div class="method-intro reveal"><div class="eyebrow">04 · Método</div><h2 class="serif">Menos ruído.<br>Mais direção.</h2><p>Uma experiência jurídica mais clara começa pela forma como a informação é recebida, organizada, explicada e acompanhada.</p></div>
+        <div class="steps">
+          <div class="step reveal"><div class="n">01</div><div><h3>Escuta</h3><p>Entender a demanda sem reduzir a situação a uma fórmula pré-definida.</p></div><div class="arr">↘</div></div>
+          <div class="step reveal"><div class="n">02</div><div><h3>Leitura</h3><p>Organizar fatos, documentos e contexto para formar uma visão mais precisa do cenário.</p></div><div class="arr">↘</div></div>
+          <div class="step reveal"><div class="n">03</div><div><h3>Direção</h3><p>Explicar possibilidades, limites e próximos passos em linguagem compreensível.</p></div><div class="arr">↘</div></div>
+          <div class="step reveal"><div class="n">04</div><div><h3>Acompanhamento</h3><p>Manter a comunicação estruturada durante o desenvolvimento da demanda.</p></div><div class="arr">↘</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section signature">
+      <div class="wrap signature-card reveal" id="signatureCard">
+        <div class="signature-copy"><div><div class="eyebrow">05 · Assinatura</div><h2 class="serif">Uma presença visual tão própria quanto a forma de conduzir.</h2></div><p>Sem excesso de formalismo visual. Sem ícones jurídicos previsíveis. A Vianna se apresenta com uma linguagem contemporânea, sóbria e autoral.</p></div>
+        <div class="signature-art" id="signatureArt"><div class="prism" id="prism"><div class="prism-face"></div><div class="prism-face"></div><div class="prism-face"></div><div class="prism-v">V</div></div><div class="sig-caption">VIANNA / ADVOCACIA / ARARAQUARA</div></div>
+      </div>
+    </section>
+
+    <section class="section office" id="escritorio">
+      <div class="wrap office-grid">
+        <div class="office-copy reveal"><div class="eyebrow">06 · O escritório</div><h2 class="serif">Presença local.<br>Comunicação direta.</h2><p>A Vianna Advocacia está localizada em Araraquara/SP. O contato pode ser iniciado diretamente pelo WhatsApp para apresentação da demanda e alinhamento inicial.</p>
+          <div class="info-stack"><div class="info-row"><span>Telefone / WhatsApp</span><strong>+55 16 98872-5369</strong></div><div class="info-row"><span>Endereço</span><strong>Av. Dr. Giuseppe Aufiero, 192 - Jardim Adalgisa, Araraquara - SP, 14806-142, Brasil</strong></div><div class="info-row"><span>Atendimento</span><strong>Informações e agendamento pelo WhatsApp</strong></div></div>
+        </div>
+        <div class="map-art reveal"><div class="map-grid"></div><div class="map-road"></div><div class="map-pin"></div><a class="map-link magnetic" href="https://www.google.com/maps/search/?api=1&query=Av.%20Dr.%20Giuseppe%20Aufiero%2C%20192%20-%20Jardim%20Adalgisa%2C%20Araraquara%20-%20SP%2C%2014806-142%2C%20Brasil" target="_blank" rel="noopener">Abrir no mapa ↗</a><div class="map-label"><b>Araraquara · SP</b><span>Av. Dr. Giuseppe Aufiero, 192<br>Jardim Adalgisa · 14806-142</span></div></div>
+      </div>
+    </section>
+
+    <section class="section notes" id="notas">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="eyebrow">07 · Notas</div><h2 class="serif">Conteúdo para entender antes de decidir.</h2></div><p>Uma linguagem editorial cria autoridade sem depender de frases promocionais. O foco é explicar melhor temas que normalmente chegam cheios de dúvidas.</p></div>
+        <div class="notes-grid"><article class="note big reveal"><span class="note-tag">Guia prático</span><div><h3>Como se preparar para uma primeira conversa jurídica</h3><p>Organizar documentos, datas, mensagens e objetivos ajuda a transformar um relato disperso em uma visão mais clara do problema.</p></div><span class="arrow">↗</span></article><article class="note reveal"><span class="note-tag">Leitura</span><h3>Por que contexto importa tanto quanto o documento</h3><span class="arrow">↗</span></article><article class="note reveal"><span class="note-tag">Organização</span><h3>O que separar antes de apresentar uma demanda</h3><span class="arrow">↗</span></article></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="wrap">
+        <div class="contact-top"><h2 class="serif reveal">Comece pela <em>conversa.</em></h2><div class="contact-panel reveal"><p>Apresente de forma breve o que está acontecendo. A partir desse primeiro contato, é possível alinhar a melhor forma de seguir.</p><div class="contact-actions"><a class="btn btn-primary magnetic" href="https://wa.me/5516988725369" target="_blank" rel="noopener">WhatsApp ↗</a><a class="btn btn-ghost magnetic" href="tel:+5516988725369">Ligar</a></div></div></div>
+        <div class="contact-data reveal"><div><b>Telefone</b>+55 16 98872-5369</div><div><b>Endereço</b>Av. Dr. Giuseppe Aufiero, 192<br>Jardim Adalgisa · Araraquara/SP</div><div><b>Observação</b>Conteúdo institucional. Nenhuma informação deste site representa promessa de resultado.</div></div>
+        <footer><span>© <span id="year"></span> Vianna Advocacia. Todos os direitos reservados.</span><span>Privacidade · Cookies · Conteúdo institucional</span></footer>
+      </div>
+    </section>
+  </main>
+
+  <a class="float-wa magnetic" href="https://wa.me/5516988725369" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">WA</a>
+  <div class="cookie" id="cookieBox"><p>Este site utiliza recursos essenciais para funcionamento e experiência de navegação. Ao continuar, você concorda com o uso básico desses recursos.</p><div class="cookie-actions"><button class="accept" id="cookieAccept">Entendi</button><button class="close" id="cookieClose">Fechar</button></div></div>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LegalService","name":"Vianna Advocacia","telephone":"+55 16 98872-5369","address":{"@type":"PostalAddress","streetAddress":"Av. Dr. Giuseppe Aufiero, 192 - Jardim Adalgisa","addressLocality":"Araraquara","addressRegion":"SP","postalCode":"14806-142","addressCountry":"BR"},"areaServed":"Araraquara, SP"}</script>
+
+  <script>
+    const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const header=document.getElementById('header'),progress=document.getElementById('progressBar'),menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    function onScroll(){
+      header.classList.toggle('scrolled',scrollY>24);
+      const h=document.documentElement.scrollHeight-innerHeight;progress.style.width=(h?scrollY/h*100:0)+'%';
+      if(!reduced){document.getElementById('ghostWord').style.setProperty('--ghost-x',(-scrollY*.04)+'px');document.getElementById('lawWord').style.setProperty('--law-y',((document.getElementById('experiencia').getBoundingClientRect().top-innerHeight*.45)*.07)+'px')}
+    }
+    addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+    menuBtn.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');document.body.classList.toggle('menu-open',open);menuBtn.textContent=open?'✕':'☰'});
+    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.classList.remove('open');document.body.classList.remove('menu-open');menuBtn.textContent='☰'}));
+
+    const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
+    document.querySelectorAll('.reveal,.clip-reveal').forEach(el=>io.observe(el));
+
+    const pointerFine=matchMedia('(pointer:fine)').matches;
+    if(pointerFine){
+      document.body.classList.add('has-pointer');const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');let rx=0,ry=0,mx=0,my=0;
+      addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px)`});
+      (function cursor(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(cursor)})();
+      document.querySelectorAll('a,button,.tilt').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-active'));el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-active'))});
+      document.querySelectorAll('.magnetic').forEach(el=>{el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2)*.12,y=(e.clientY-r.top-r.height/2)*.12;el.style.transform=`translate(${x}px,${y}px)`});el.addEventListener('mouseleave',()=>el.style.transform='')});
+      document.querySelectorAll('.tilt').forEach(el=>{el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(900px) rotateX(${-y*6}deg) rotateY(${x*7}deg) translateY(-3px)`});el.addEventListener('mouseleave',()=>el.style.transform='')});
+      const art=document.getElementById('heroArt'),orb=document.getElementById('orb'),v=document.getElementById('vSculpt');art.addEventListener('mousemove',e=>{const r=art.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;orb.style.transform=`rotateX(${-y*10}deg) rotateY(${x*12}deg) translateZ(0)`;v.style.transform=`rotateY(${-14+x*12}deg) rotateX(${5-y*8}deg) translate(${x*10}px,${y*8}px)`});art.addEventListener('mouseleave',()=>{orb.style.transform='';v.style.transform=''});
+      const sig=document.getElementById('signatureArt'),prism=document.getElementById('prism');sig.addEventListener('mousemove',e=>{const r=sig.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;prism.style.transform=`rotateX(${9-y*12}deg) rotateY(${-20+x*18}deg) translateZ(10px)`});sig.addEventListener('mouseleave',()=>prism.style.transform='');
+    }
+
+    const canvas=document.getElementById('field'),ctx=canvas.getContext('2d');let pts=[];function resize(){const d=Math.min(devicePixelRatio||1,2);canvas.width=innerWidth*d;canvas.height=innerHeight*d;canvas.style.width=innerWidth+'px';canvas.style.height=innerHeight+'px';ctx.setTransform(d,0,0,d,0,0);pts=Array.from({length:Math.min(85,Math.floor(innerWidth/16))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:(Math.random()-.5)*.12,vy:(Math.random()-.5)*.12,r:Math.random()*1.4+.25}))}resize();addEventListener('resize',resize);
+    function drawField(){ctx.clearRect(0,0,innerWidth,innerHeight);for(const p of pts){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>innerWidth)p.vx*=-1;if(p.y<0||p.y>innerHeight)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(228,185,130,.34)';ctx.fill()}for(let i=0;i<pts.length;i++){for(let j=i+1;j<pts.length;j++){const a=pts[i],b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);if(d<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=`rgba(228,185,130,${(1-d/120)*.055})`;ctx.stroke()}}}if(!reduced)requestAnimationFrame(drawField)}drawField();
+
+    const cookie=document.getElementById('cookieBox');if(!localStorage.getItem('vianna-cookie'))setTimeout(()=>cookie.classList.add('show'),1000);function closeCookie(save){cookie.classList.remove('show');if(save)localStorage.setItem('vianna-cookie','1')}document.getElementById('cookieAccept').onclick=()=>closeCookie(true);document.getElementById('cookieClose').onclick=()=>closeCookie(false);
+  </script>
+</body>
+</html>
